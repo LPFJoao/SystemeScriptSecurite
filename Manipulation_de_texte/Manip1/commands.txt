@@ -1,0 +1,13 @@
+prompt: awk -F',' 'NR > 1 { print $3 }' donnes.csv
+
+awk	- Interpréteur pour manipuler des lignes/colonnes de texte;
+-F',' - Définit la virgule , comme le delimeteur;
+'NR > 1 { print $3 }'	NR > 1 ignore la ligne d'en-tête ; $3 = 3ᵉ colonne (Ville);
+donnes.csv - Le fichier où chercher les infos;
+
+Reponse:
+Paris
+Lyon
+Marseille
+Toulouse
+
