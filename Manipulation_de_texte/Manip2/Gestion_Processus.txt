@@ -1,0 +1,24 @@
+ps aux
+reponse:
+montre tous les processous actifs
+
+ps aux | grep firefox
+reponse:
+montre tous les processous firefox actifs
+
+ps - Affiche les processus;
+a  - Montre les processus de tous les utilisateurs;
+u  - Affiche aussi l'utilisateur qui a lancé le processus;
+x  - Affiche les processus sans terminal associé;
+
+pkill <PID du processus>;
+pkill 1989
+
+pkill <chemin processus> -f (si plus de 15 carateres); 
+pkill /usr/lib/firefox-esr/browser -f
+
+pkill -9(si besoin force l'arret) <chemin processus> -f (si plus de 15 carateres);
+pkill -9 /usr/lib/firefox-esr/browser -f
+
+ps aux | grep firefox
+
