@@ -1,0 +1,53 @@
+# Web Stack Auto-Setup with Nginx, PHP, MariaDB and phpMyAdmin
+
+This script automates the installation and configuration of a full web development environment on Debian using **Nginx**, **PHP**, **MariaDB**, **phpMyAdmin**, **Node.js**, and **Git**.
+
+It is intended for developers who want a working stack without having to configure each service manually.
+
+---
+
+## 🔧 What it does
+
+- Updates the system
+- Installs **Nginx** as the web server
+- Installs **PHP-FPM** and necessary PHP extensions
+- Installs **MariaDB** and applies basic security configuration
+- Installs **phpMyAdmin** without Apache or Lighttpd
+- Automatically configures Nginx to serve phpMyAdmin
+- Creates a ready-to-use `/var/www/webapp` directory
+- Sets up a default `index.php` file with `phpinfo()`
+- Installs **Node.js** and **npm**
+- Installs **Git**
+- Creates a MariaDB user:
+  - Username: `dev`
+  - Password: `devpass`
+  - Grants full access to all databases
+
+---
+
+## 📂 Directory structure
+
+- `/var/www/webapp` → Main web directory served by Nginx
+- `index.php` → Contains a `phpinfo()` test page
+- phpMyAdmin accessible via `/phpmyadmin`
+
+---
+
+## 🔐 MariaDB Access
+
+After installation, you can log in to phpMyAdmin using:
+
+- **Username**: `dev`
+- **Password**: `devpass`
+
+> Note: The root MySQL user uses Unix socket authentication by default and cannot log in via phpMyAdmin.
+
+---
+
+## 🚀 How to use
+
+1. Clone this repo or copy the script into your Debian system.
+2. Make the script executable:
+   ```bash
+   chmod +x install_web.sh
+
