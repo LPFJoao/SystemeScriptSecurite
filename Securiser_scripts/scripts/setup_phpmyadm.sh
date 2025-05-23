@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+sudo mkdir -p /etc/nginx/snippets
 
 echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect" | sudo debconf-set-selections
 export DEBIAN_FRONTEND=noninteractive

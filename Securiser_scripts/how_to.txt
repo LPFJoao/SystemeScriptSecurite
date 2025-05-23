@@ -1,0 +1,59 @@
+# Secure Web Stack Installer (Nginx + PHP + MariaDB + HTTPS)
+
+This repository provides a modular and secure Bash-based installer for setting up a complete web development environment using:
+
+- Nginx (with HTTPS and redirect)
+- PHP-FPM + common extensions
+- MariaDB with a dev user
+- phpMyAdmin (auto-integrated into Nginx)
+- Node.js and npm
+- Git
+
+The setup uses **self-signed SSL certificates** for HTTPS and separates all components into individual scripts for easier maintenance and updates.
+
+---
+
+## Project Structure
+
+Sécuriser_scripts/
+├── install_web.sh                  # Main script
+└── scripts/
+        ├── setup_php.sh            # Installs PHP, Node.js, Git
+        ├── setup_user.sh           # Installs and secures MariaDB + dev account
+        ├── setup_phpmyadmin.sh     # Installs phpMyAdmin and links it to Nginx
+        ├── setup_nginx.sh          # Configures Nginx + web root + SSL include
+        └── setup_ssl.sh            # Generates SSL cert + SSL config for Nginx
+
+
+
+---
+
+## How to Install
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/LPFJoao/SystemeScriptSecurite/Securiser_scripts.git
+   cd Sécuriser_scripts
+   chmod +x install_web.sh
+   chmod +x scripts/*.sh
+   sudo ./install_web.sh
+   
+
+---
+
+## How to test the setup locally
+
+1. Open your browser and go to:
+   - https://localhost/phpmyadmin
+
+2. If you get a **certificate warning**, accept it to proceed (it's expected with self-signed certs).
+
+3. Log into phpMyAdmin using:
+   - User: `dev`
+   - Pass: `devpass`
+
+
+
+
+
